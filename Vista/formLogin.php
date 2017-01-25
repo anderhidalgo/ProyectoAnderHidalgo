@@ -28,13 +28,13 @@ abstract class formLogin
 
         <h3>Bienvenido, introduce tus datos o realiza el registro</h3>
 
-        <form action="router.php" method="post">
+        <form action="../Controlador/router.php" method="post">
 
             <p>Usuario: <input type="text" name="usuario"></p>
 
             <p>Contraseña: <input type="password" name="contrasena"></p>
 
-            <input type="submit" name="enviar" value="entrar">
+            <input type="submit" name="entrar" value="entrar">
             <input type="submit" name="registrarse" value="registrarse">
 
         </form>

@@ -9,9 +9,21 @@
 require_once "../Vista/formLogin.php";
 require_once "../Vista/formExito.php";
 require_once  "../Vista/formRegistro.php";
+require_once "../Modelo/LoginBD.php";
 
 
-if(isset($_POST["enviar"])){
+if(isset($_POST["entrar"])){
+
+   $correcto= LoginBD::logueo($_POST);
+   if($correcto)
+   {
+
+   }
+
+   else
+   {
+    echo "error en el login";
+   }
 
 }
 

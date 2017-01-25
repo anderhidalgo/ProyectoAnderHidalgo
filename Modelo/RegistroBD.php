@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: 2gdwes03
+ * Date: 25/1/17
+ * Time: 14:09
+ */
+class RegistroBD
+{
+
+    ///
+
+
+
+}
