@@ -9,7 +9,7 @@
 require_once "Vista/formLogin.php";
 
 
-//Nos dirigimos a el formulario inicial que es el login
+//Nos dirigimos a el formulario inicial que es el login (formLogin)
 
 formLogin::fInicio();
 
