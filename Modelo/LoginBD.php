@@ -5,8 +5,9 @@
  * Date: 25/1/17
  * Time: 13:23
  */
-require_once "GenericoBD.php";
+require_once "../Modelo/GenericoBD.php";
 //funciones
+
 class LoginBD
 {
     public static function logueo()
@@ -22,17 +23,20 @@ class LoginBD
 
         $fila = mysqli_fetch_object($resultado);
 
-        if($resultado->num_rows!=0)
+        GenericoBD::desconectar($conexion);
+
+        if($resultado->num_rows!= 0)
+
         {
             return true;
 
         }
+
         else
         {
             return false;
         }
-
-        GenericoBD::desconectar();
+        
 
     }
 }

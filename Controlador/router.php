@@ -12,9 +12,11 @@ require_once  "../Vista/formRegistro.php";
 require_once "../Modelo/LoginBD.php";
 
 
+//Router para movernos entre las opciones
+
 if(isset($_POST["entrar"])){
 
-   $correcto= LoginBD::logueo($_POST);
+   $correcto = LoginBD::logueo($_POST);
    if($correcto)
    {
 
