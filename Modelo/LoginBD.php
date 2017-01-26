@@ -6,7 +6,7 @@
  * Time: 13:23
  */
 require_once "../Modelo/GenericoBD.php";
-//funciones
+//funciones para el logueo
 
 class LoginBD
 {
@@ -17,6 +17,7 @@ class LoginBD
         $nombre=$_POST["usuario"];
         $contrasena=$_POST["contrasena"];
 
+        //consulta en la base de datos
         $consulta="SELECT * FROM Usuario WHERE NomUsuario='".$nombre."' AND Contrasena='".$contrasena."'";
 
         $resultado = mysqli_query($conexion, $consulta);
@@ -24,6 +25,7 @@ class LoginBD
         $fila = mysqli_fetch_object($resultado);
 
         GenericoBD::desconectar($conexion);
+        //Cuando encuentra algun resultado retorna true cuando no retorna false
 
         if($resultado->num_rows!= 0)
 

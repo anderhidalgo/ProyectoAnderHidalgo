@@ -6,7 +6,7 @@
  * Time: 13:57
  */
 
-//Pagina con el formulario de registro
+//Pagina con el formulario de registro de un nuevo usuario
 abstract class formRegistro
 {
 
