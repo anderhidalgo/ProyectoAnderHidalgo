@@ -8,7 +8,7 @@
 
 require_once "../Vista/formLogin.php";
 require_once "../Vista/formExito.php";
-require_once  "../Vista/formRegistro.php";
+require_once "../Vista/formRegistro.php";
 require_once "../Modelo/LoginBD.php";
 
 
@@ -21,7 +21,6 @@ if(isset($_POST["entrar"])){
    {
 
    }
-
    else
    {
     echo "error en el login";
@@ -29,15 +28,15 @@ if(isset($_POST["entrar"])){
 
 }
 
-if(isset($_POST["registrarse"])){
+if(isset($_POST["registrarse"])) {
     formRegistro::fRegistro();
 }
 
-if(isset($_POST["Registrar"])){
+if(isset($_POST["Registrar"])) {
     formExito::fExito();
 }
 
-if(isset($_POST["cancelar"])){
+if(isset($_POST["cancelar"])) {
     formLogin::fInicio();
 
 }

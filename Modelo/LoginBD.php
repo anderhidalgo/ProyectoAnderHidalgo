@@ -25,6 +25,7 @@ class LoginBD
         $fila = mysqli_fetch_object($resultado);
 
         GenericoBD::desconectar($conexion);
+
         //Cuando encuentra algun resultado retorna true cuando no retorna false
 
         if($resultado->num_rows!= 0)
