@@ -23,7 +23,7 @@ class Usuario
      * @param $Foto
      * @param $FRegistro
      */
-    //En el constructor he quitado de momento FRegistro
+    //En el constructor he quitado de momento FRegistro chiflas
     public function __construct($NomUsuario, $Contrasena, $Email, $FNacimiento, $Ciudad, $Pais, $Foto)
     {
         $this->NomUsuario = $NomUsuario;
