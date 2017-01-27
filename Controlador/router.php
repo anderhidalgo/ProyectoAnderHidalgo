@@ -12,7 +12,7 @@ require_once "../Vista/formRegistro.php";
 require_once "../Modelo/LoginBD.php";
 
 
-//Router para movernos entre las opciones
+//Router para movernos entre las opciones de la pagina
 
 if(isset($_POST["entrar"])){
 
@@ -23,7 +23,7 @@ if(isset($_POST["entrar"])){
    }
    else
    {
-    echo "error en el login";
+    echo "error en el login el usuario no esta registrado";
    }
 
 }
