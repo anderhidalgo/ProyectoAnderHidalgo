@@ -9,30 +9,24 @@
 require_once "../Vista/formLogin.php";
 require_once "../Vista/formExito.php";
 require_once "../Vista/formRegistro.php";
-require_once "../Modelo/LoginBD.php";
+require_once "LoginBD.php";
+require_once "RegistroBD.php";
 
 
 //Router para movernos entre las opciones de la pagina
 
 if(isset($_POST["entrar"])){
 
-   $correcto = LoginBD::logueo($_POST);
-   if($correcto)
-   {
-
-   }
-   else
-   {
-    echo "error en el login el usuario no esta registrado";
-   }
-
+    LoginBD::logueo();
 }
 
 if(isset($_POST["registrarse"])) {
     formRegistro::fRegistro();
 }
 
-if(isset($_POST["Registrar"])) {
+if(isset($_POST["registrar"])) {
+    //Llamamos a la funcion para registrarnos en RegistroBD y luego al formExito
+    RegistroBD::registroUsuario();
     formExito::fExito();
 }
 

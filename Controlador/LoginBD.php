@@ -6,10 +6,12 @@
  * Time: 13:23
  */
 require_once "../Modelo/GenericoBD.php";
+
 //funciones para el logueo
 
 class LoginBD
 {
+
     public static function logueo()
     {
         $conexion=GenericoBD::conectar();
@@ -24,22 +26,29 @@ class LoginBD
 
         $fila = mysqli_fetch_object($resultado);
 
-        GenericoBD::desconectar($conexion);
 
-        //Cuando encuentra algun resultado retorna true cuando no retorna false
+
+        //Cuando encuentra algun resultado va al formulario principal si no no vuelve a la pagina de login y nos mostrara un erro
 
         if($resultado->num_rows!= 0)
 
         {
-            return true;
+            $_SESSION["usuario"]=$fila->NomUsuario;
+            header('Location: ../Vista/formPrincipal.php');
 
         }
 
         else
         {
-            return false;
+
+            header('Location: ../index.php');
         }
-        
+
+
+        GenericoBD::desconectar($conexion);
+
+
 
     }
+
 }

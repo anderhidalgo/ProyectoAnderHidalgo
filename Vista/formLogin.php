@@ -38,6 +38,7 @@ abstract class formLogin
             <input type="submit" name="registrarse" value="registrarse">
 
         </form>
+        <p></p>
         </body>
         </html>
 

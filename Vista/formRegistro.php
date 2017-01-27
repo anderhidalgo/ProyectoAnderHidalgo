@@ -13,6 +13,7 @@ abstract class formRegistro
     public static function fRegistro()
     {
         ?>
+
         <!DOCTYPE html>
         <html lang="es">
         <head>
@@ -37,8 +38,11 @@ abstract class formRegistro
 
             <p>Ciudad: <input type="text" name="ciudad"></p>
 
-            <p>Pais: <select>
-                    <option name="pais" value="Alemania">Alemania</option>
+            <p>Pais: <select name="pais">
+
+                    <option  value="1">Alemania</option>
+                    <option  value="2">2</option>
+
                 </select></p>
 
             <p>Foto: <input type="text" name="foto"></p>

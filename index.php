@@ -5,6 +5,7 @@
  * Date: 24/1/17
  * Time: 13:56
  */
+session_start();
 
 require_once "Vista/formLogin.php";
 

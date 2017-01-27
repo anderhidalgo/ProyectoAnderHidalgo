@@ -23,7 +23,8 @@ class Usuario
      * @param $Foto
      * @param $FRegistro
      */
-    public function __construct($NomUsuario, $Contrasena, $Email, $FNacimiento, $Ciudad, $Pais, $Foto, $FRegistro)
+    //En el constructor he quitado de momento FRegistro
+    public function __construct($NomUsuario, $Contrasena, $Email, $FNacimiento, $Ciudad, $Pais, $Foto)
     {
         $this->NomUsuario = $NomUsuario;
         $this->Contrasena = $Contrasena;
@@ -32,7 +33,6 @@ class Usuario
         $this->Ciudad = $Ciudad;
         $this->Pais = $Pais;
         $this->Foto = $Foto;
-        $this->FRegistro = $FRegistro;
     }
 
     /**
