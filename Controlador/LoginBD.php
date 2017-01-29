@@ -20,6 +20,7 @@ class LoginBD
         $contrasena=$_POST["contrasena"];
 
         //consulta en la base de datos
+
         $consulta="SELECT * FROM Usuario WHERE NomUsuario='".$nombre."' AND Contrasena='".$contrasena."'";
 
         $resultado = mysqli_query($conexion, $consulta);
@@ -28,7 +29,7 @@ class LoginBD
 
 
 
-        //Cuando encuentra algun resultado va al formulario principal si no no vuelve a la pagina de login y nos mostrara un erro
+        //Cuando encuentra algun resultado va al formulario principal si no vuelve a la pagina de login y nos mostrara un error
 
         if($resultado->num_rows!= 0)
 
@@ -40,13 +41,11 @@ class LoginBD
 
         else
         {
-
             header('Location: ../index.php');
         }
 
 
         GenericoBD::desconectar($conexion);
-
 
 
     }
