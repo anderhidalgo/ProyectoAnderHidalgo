@@ -24,6 +24,7 @@ class Usuario
      * @param $FRegistro
      */
 
+
     //En el constructor he quitado de momento FRegistro (da un mensaje de aviso al hacer un registro de un nuevo usuario
     public function __construct($NomUsuario, $Contrasena, $Email, $FNacimiento, $Ciudad, $Pais, $Foto)
     {

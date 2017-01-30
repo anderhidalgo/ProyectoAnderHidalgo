@@ -7,6 +7,7 @@
  */
 
 include ('../Modelo/Usuario.php');
+session_start();
 
 //Pagina principal de despues loguearnos correctamente
 ?>
@@ -21,7 +22,7 @@ include ('../Modelo/Usuario.php');
 <body>
 
 <h1>Esto es la pagina principal</h1>
-<h2>Bienvenido<?php       ?></h2>
+<h2>Bienvenido <?php  echo $_SESSION["usuario"]->NomUsuario;?></h2>
 
 <form action="router.php">
     <input type="submit" name="datos" value="Mis datos">

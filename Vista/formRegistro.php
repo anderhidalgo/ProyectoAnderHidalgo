@@ -10,6 +10,9 @@
 abstract class formRegistro
 {
 
+    /**
+     *
+     */
     public static function fRegistro()
     {
         ?>
@@ -39,9 +42,16 @@ abstract class formRegistro
             <p>Ciudad: <input type="text" name="ciudad"></p>
 
             <p>Pais: <select name="pais">
+                    <?php
+                    for($x=0;$x<count($_SESSION["paises"]);$x++) {
 
-                    <option  value="1">Alemania</option>
-                    <option  value="2">2</option>
+
+                        ?>
+                        <option value="<?php echo $_SESSION["paises"]->getIdPais ?>">Alemania</option>
+                        <option value="2">2</option>
+                        <?php
+                    }
+                        ?>
 
                 </select></p>
 

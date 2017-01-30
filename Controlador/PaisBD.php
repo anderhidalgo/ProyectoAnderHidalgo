@@ -27,7 +27,7 @@ class PaisBD{
         //Creamos un array vacio de paises
         $paises = [];
 
-        //Mientras encuentre una fila
+        //Mientras encuentre una fila crea el objeto pais
 
         while($fila!=0)
         {
@@ -37,7 +37,7 @@ class PaisBD{
 
             $fila = mysqli_fetch_object($resultado);
         }
-
+        
         $_SESSION["paises"] = $paises;
 
 

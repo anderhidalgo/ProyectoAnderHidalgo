@@ -7,6 +7,8 @@
  */
 require_once "../Modelo/GenericoBD.php";
 
+session_start();
+
 //funciones para el logueo
 
 class LoginBD
@@ -32,13 +34,11 @@ class LoginBD
         //Cuando encuentra algun resultado va al formulario principal si no vuelve a la pagina de login y nos mostrara un error
 
         if($resultado->num_rows!= 0)
-
         {
-            $_SESSION["usuario"]=$fila->NomUsuario;
+            $_SESSION["usuario"]=$fila;
             header('Location: ../Vista/formPrincipal.php');
 
         }
-
         else
         {
             header('Location: ../index.php');
