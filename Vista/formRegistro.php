@@ -7,6 +7,8 @@
  */
 
 //Pagina con el formulario de registro de un nuevo usuario
+require_once "../Controlador/PaisBD.php";
+
 abstract class formRegistro
 {
 
@@ -43,12 +45,11 @@ abstract class formRegistro
 
             <p>Pais: <select name="pais">
                     <?php
+                    PaisBD::obtenerPaises();
+                    //Repetitiva que nos saca los paises de la base de datos , la consulta esta en /Controlador/PaisBD
                     for($x=0;$x<count($_SESSION["paises"]);$x++) {
+                        ?><option name ="pais" value = "<?php echo $_SESSION["paises"][$x]->getIdPais();?>"><?php echo $_SESSION["paises"][$x]->getNomPais();?></option >
 
-
-                        ?>
-                        <option value="<?php echo $_SESSION["paises"]->getIdPais ?>">Alemania</option>
-                        <option value="2">2</option>
                         <?php
                     }
                         ?>

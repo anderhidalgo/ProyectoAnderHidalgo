@@ -7,11 +7,10 @@
  */
 
 require_once "../Vista/formLogin.php";
-require_once "../Vista/formExito.php";
 require_once "../Vista/formRegistro.php";
+require_once "../Vista/formDatos.php";
 require_once "LoginBD.php";
 require_once "RegistroBD.php";
-
 
 //Router para movernos entre las opciones de la pagina
 
@@ -25,18 +24,19 @@ if(isset($_POST["registrarse"])) {
 }
 
 if(isset($_POST["registrar"])) {
-    //Llamamos a la funcion para registrarnos en RegistroBD y luego al formExito
+    //Llamamos a la funcion para registrarnos en RegistroBD y luego nos loguea
     RegistroBD::registroUsuario();
-    formExito::fExito();
-}
-
-if(isset($_POST["cancelar"])) {
-    formLogin::fInicio();
-
+    LoginBD::logueo();
 }
 
 if(isset($_POST["misdatos"])){
 
+    formDatos::Datos();
+
+}
+
+if(isset($_POST["cancelar"])) {
+    header('Location: ../index.php');
 
 }
 

@@ -6,7 +6,7 @@
  * Time: 12:20
  */
 
-include ('../Modelo/Usuario.php');
+require_once ('../Modelo/Usuario.php');
 session_start();
 
 //Pagina principal de despues loguearnos correctamente
@@ -24,12 +24,14 @@ session_start();
 <h1>Esto es la pagina principal</h1>
 <h2>Bienvenido <?php  echo $_SESSION["usuario"]->NomUsuario;?></h2>
 
-<form action="router.php">
-    <input type="submit" name="datos" value="Mis datos">
+<form action="../Controlador/router.php" method="post">
+
+    <input type="submit" name="misdatos" value="Mis datos">
     <input type="submit" name="baja" value="Darme de baja">
     <input type="submit" name="albumes" value="Mis álbumes">
     <input type="submit" name="nuevoalbum" value="Crear álbum">
     <input type="submit" name="fotonueva" value="Añadir foto al álbum">
+
 </form>
 </body>
 

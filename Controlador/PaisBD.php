@@ -24,12 +24,15 @@ class PaisBD{
 
         $fila = mysqli_fetch_object($resultado);
 
+        //Iniciamos la sesion
+        session_start();
         //Creamos un array vacio de paises
         $paises = [];
 
         //Mientras encuentre una fila crea el objeto pais
 
         while($fila!=0)
+
         {
             $pais = new Pais($fila->IdPais, $fila->NomPais);
 
@@ -37,7 +40,8 @@ class PaisBD{
 
             $fila = mysqli_fetch_object($resultado);
         }
-        
+
+        //En $_session metemos $paises que hemos creado antes
         $_SESSION["paises"] = $paises;
 
 

@@ -9,16 +9,34 @@
 
 class Pais
 {
-
+    private $idPais;
     private $NomPais;
 
     /**
      * Pais constructor.
+     * @param $idPais
      * @param $NomPais
      */
-    public function __construct($NomPais)
+    public function __construct($idPais, $NomPais)
     {
+        $this->idPais = $idPais;
         $this->NomPais = $NomPais;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdPais()
+    {
+        return $this->idPais;
+    }
+
+    /**
+     * @param mixed $idPais
+     */
+    public function setIdPais($idPais)
+    {
+        $this->idPais = $idPais;
     }
 
     /**
@@ -36,8 +54,6 @@ class Pais
     {
         $this->NomPais = $NomPais;
     }
-
-
 
 
 }
