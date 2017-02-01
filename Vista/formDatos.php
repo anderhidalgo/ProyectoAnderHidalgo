@@ -8,6 +8,7 @@
 //Pagina con los datos del usuario
 require_once "../Controlador/PaisBD.php";
 
+//Formulario 
 abstract class formDatos{
 
     public static function Datos(){
