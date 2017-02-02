@@ -12,7 +12,7 @@
 abstract class formLogin
 {
 
-    public static function fInicio()
+    public static function fInicio($error='')
 
     {
         ?>
@@ -28,7 +28,7 @@ abstract class formLogin
 
         <h3>Bienvenido, introduce tus datos o realiza el registro</h3>
 
-        <form action="Controlador/router.php" method="post">
+        <form action="/ProyectoAnderHidalgo/Controlador/router.php" method="post">
 
             <p>Usuario: <input type="text" name="usuario"></p>
 
@@ -38,7 +38,8 @@ abstract class formLogin
             <input type="submit" name="registrarse" value="registrarse">
 
         </form>
-        <p></p>
+        <br>
+        <p> <?php echo $error; ?></p>
         </body>
         </html>
 

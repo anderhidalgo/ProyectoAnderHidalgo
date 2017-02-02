@@ -6,6 +6,7 @@
  * Time: 13:23
  */
 require_once "../Modelo/GenericoBD.php";
+require_once "../Vista/formLogin.php";
 
 session_start();
 
@@ -35,13 +36,26 @@ class LoginBD
 
         if($resultado->num_rows!= 0)
         {
+            /*
+            $usu = new Usuario();
+            $usu->setNomUsuario($fila['nomUsuario']);
+
+
+            $_SESSION["usuario"] = serialize($usu);
+
+            para unserializar
+
+            $usuario = unserialize($_SESSION["usuario"]);
+             */
             $_SESSION["usuario"]=$fila;
             header('Location: ../Vista/formPrincipal.php');
 
         }
         else
         {
-            header('Location: ../index.php');
+            //Me lleva a index si falla lo he cambiado por un mensaje de error
+            //header('Location: ../index.php');
+            formLogin::fInicio("ERROR el usuario no existe, registrate para poder acceder a la pagina");
         }
 
 

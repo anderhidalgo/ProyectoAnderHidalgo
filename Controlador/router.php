@@ -9,8 +9,10 @@
 require_once "../Vista/formLogin.php";
 require_once "../Vista/formRegistro.php";
 require_once "../Vista/formDatos.php";
+require_once "../Vista/formBorrar.php";
 require_once "LoginBD.php";
 require_once "RegistroBD.php";
+require_once "BorrarBD.php";
 
 //Router para movernos entre las opciones de la pagina
 
@@ -33,6 +35,13 @@ if(isset($_POST["misdatos"])){
 
     formDatos::Datos();
 
+}
+
+if(isset($_POST["baja"])){
+    if(BorrarBD::borrar()){
+        echo "borrado";
+    }
+    header('Location: ../index.php');
 }
 
 if(isset($_POST["cancelar"])) {

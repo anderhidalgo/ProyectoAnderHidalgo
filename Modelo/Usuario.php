@@ -22,6 +22,7 @@ class Usuario
      * @param $Pais
      * @param $Foto
      * @param $FRegistro
+     *
      */
 
 
