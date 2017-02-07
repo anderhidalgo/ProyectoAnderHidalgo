@@ -7,6 +7,7 @@
  */
 require_once "../Modelo/GenericoBD.php";
 require_once "../Vista/formLogin.php";
+require_once "../Modelo/Usuario.php";
 
 session_start();
 
@@ -28,7 +29,7 @@ class LoginBD
 
         $resultado = mysqli_query($conexion, $consulta);
 
-        $fila = mysqli_fetch_object($resultado);
+        $fila = mysqli_fetch_array($resultado);
 
 
 
@@ -36,19 +37,12 @@ class LoginBD
 
         if($resultado->num_rows!= 0)
         {
-            /*
-            $usu = new Usuario();
-            $usu->setNomUsuario($fila['nomUsuario']);
 
+            $usu = new Usuario($fila['NomUsuario'],$fila['Contrasena'],$fila['Email'],$fila['FNacimiento'],$fila['Ciudad'],$fila['Pais'],$fila['Foto']);
 
             $_SESSION["usuario"] = serialize($usu);
 
-            para unserializar
-
-            $usuario = unserialize($_SESSION["usuario"]);
-             */
-            $_SESSION["usuario"]=$fila;
-            header('Location: ../Vista/formPrincipal.php');
+            //header('Location: ../Vista/formPrincipal.php');
 
         }
         else

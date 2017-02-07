@@ -25,6 +25,7 @@ class Foto
      * @param $Fichero
      * @param $FRegistro
      */
+
     public function __construct($Titulo, $Fecha, $Pais, $Album, $Fichero, $FRegistro)
     {
         $this->Titulo = $Titulo;

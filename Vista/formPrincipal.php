@@ -7,7 +7,9 @@
  */
 
 require_once ('../Modelo/Usuario.php');
-session_start();
+if (session_status() != 2) {
+    session_start();
+}
 
 //Pagina principal de despues loguearnos correctamente
 ?>
@@ -22,7 +24,7 @@ session_start();
 <body>
 
 <h1>Esto es la pagina principal</h1>
-<h2>Bienvenido <?php  echo $_SESSION["usuario"]->NomUsuario;?></h2>
+<h2>Bienvenido <?php $usu = unserialize($_SESSION["usuario"]);echo $usu->getNomUsuario();?></h2>
 
 <form action="../Controlador/router.php" method="post">
 

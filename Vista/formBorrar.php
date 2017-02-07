@@ -9,6 +9,7 @@
 require_once '../Modelo/Usuario.php';
 
 abstract class formBorrar
+
 {
 
         public static function vBaja()
@@ -44,5 +45,6 @@ abstract class formBorrar
         }
 
 }
+
 
 ?>

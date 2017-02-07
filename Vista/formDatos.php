@@ -13,6 +13,8 @@ abstract class formDatos{
 
     public static function Datos(){
 
+        $usu=unserialize($_SESSION["usuario"]);
+
         ?>
 
                 <!DOCTYPE html>
@@ -28,12 +30,12 @@ abstract class formDatos{
 
                 <form action="router.php" method="post">
 
-                    <p>Usuario: <input type="text" name="usuario" value="<?php $usu=$_SESSION["usuario"]; echo $usu->NomUsuario;?>"></p>
-                    <p>Contraseña: <input type="password" name="contrasena" value="<?php  echo $_SESSION["usuario"]->Contrasena;?>"></p>
-                    <p>Email: <input type="text" name="email" value="<?php  echo $_SESSION["usuario"]->Email;?>"></p>
-                    <p>Fecha <input type="date" name="fecha" value="<?php  echo $_SESSION["usuario"]->FNacimiento;?>"></p>
-                    <p>Ciudad: <input type="text" name="ciudad" value="<?php echo $_SESSION["usuario"]->Ciudad ?>"></p>
-                    <p>Pais: <select>
+                    <p>Usuario: <input type="text" name="usuario" value="<?php echo $usu->getNomUsuario();?>"></p>
+                    <p>Contraseña: <input type="text" name="contrasena" value="<?php  echo $usu->getContrasena();?>"></p>
+                    <p>Email: <input type="text" name="email" value="<?php  echo $usu->getEmail();?>"></p>
+                    <p>Fecha <input type="date" name="fecha" value="<?php  echo $usu->getFNacimiento();?>"></p>
+                    <p>Ciudad: <input type="text" name="ciudad" value="<?php echo $usu->getCiudad();?>"></p>
+                    <p>Pais: <select name="pais">
                             <?php
                             PaisBD::obtenerPaises();
 
@@ -52,9 +54,9 @@ abstract class formDatos{
                             ?>
                         </select></p>
 
-                    <p>Foto: <input type="text" name="foto" value="<?php echo $_SESSION["usuario"]->Foto?>"></p>
+                    <p>Foto: <input type="text" name="foto" value="<?php echo $usu->getFoto();?>"></p>
 
-                    <input type="submit" name="actualizar" value="Guardar">
+                    <input type="submit" name="modificar" value="Modificar">
                     <input type="submit" name="cancelar" value="cancelar">
 
                 </form>

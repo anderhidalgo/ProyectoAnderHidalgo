@@ -41,8 +41,6 @@ public static function borrar(){
         echo $e;
     }
 
-
-
     }
 
 }

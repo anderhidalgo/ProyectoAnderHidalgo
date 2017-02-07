@@ -10,41 +10,51 @@ require_once "../Vista/formLogin.php";
 require_once "../Vista/formRegistro.php";
 require_once "../Vista/formDatos.php";
 require_once "../Vista/formBorrar.php";
+
 require_once "LoginBD.php";
 require_once "RegistroBD.php";
 require_once "BorrarBD.php";
+require_once "ModificarBD.php";
 
 //Router para movernos entre las opciones de la pagina
 
 if(isset($_POST["entrar"])){
 
     LoginBD::logueo();
+    require_once "../Vista/formPrincipal.php";
 }
 
-if(isset($_POST["registrarse"])) {
+elseif(isset($_POST["registrarse"])) {
     formRegistro::fRegistro();
 }
 
-if(isset($_POST["registrar"])) {
+elseif(isset($_POST["registrar"])) {
     //Llamamos a la funcion para registrarnos en RegistroBD y luego nos loguea
     RegistroBD::registroUsuario();
     LoginBD::logueo();
 }
 
-if(isset($_POST["misdatos"])){
+elseif(isset($_POST["misdatos"])){
 
     formDatos::Datos();
 
 }
-
-if(isset($_POST["baja"])){
-    if(BorrarBD::borrar()){
-        echo "borrado";
-    }
-    header('Location: ../index.php');
+elseif(isset($_POST["modificar"])){
+    ModificarBD::modificar();
+    header('Location: ../Vista/formPrincipal.php');
 }
 
-if(isset($_POST["cancelar"])) {
+elseif(isset($_POST["baja"])){
+    if(BorrarBD::borrar()){
+        echo "borrado";
+        header('Location: ../index.php');
+    }else{
+        echo "No borrado";
+    }
+
+}
+
+elseif(isset($_POST["cancelar"])) {
     header('Location: ../index.php');
 
 }
