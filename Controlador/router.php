@@ -21,7 +21,8 @@ require_once "ModificarBD.php";
 if(isset($_POST["entrar"])){
 
     LoginBD::logueo();
-    require_once "../Vista/formPrincipal.php";
+
+    //require_once "../Vista/formPrincipal.php";
 }
 
 elseif(isset($_POST["registrarse"])) {

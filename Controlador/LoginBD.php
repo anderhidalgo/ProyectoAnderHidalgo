@@ -42,7 +42,8 @@ class LoginBD
 
             $_SESSION["usuario"] = serialize($usu);
 
-            //header('Location: ../Vista/formPrincipal.php');
+
+            header('Location: ../Vista/formPrincipal.php');
 
         }
         else

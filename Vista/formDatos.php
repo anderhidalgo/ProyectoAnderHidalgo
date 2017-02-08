@@ -30,7 +30,7 @@ abstract class formDatos{
 
                 <form action="router.php" method="post">
 
-                    <p>Usuario: <input type="text" name="usuario" value="<?php echo $usu->getNomUsuario();?>"></p>
+                    <p>Usuario: <input type="text" name="usuario" value="<?php echo $usu->getNomUsuario();?>" disabled></p>
                     <p>Contraseña: <input type="text" name="contrasena" value="<?php  echo $usu->getContrasena();?>"></p>
                     <p>Email: <input type="text" name="email" value="<?php  echo $usu->getEmail();?>"></p>
                     <p>Fecha <input type="date" name="fecha" value="<?php  echo $usu->getFNacimiento();?>"></p>
@@ -41,7 +41,7 @@ abstract class formDatos{
 
                             for ($x = 0; $x < count($_SESSION["paises"]); $x++)
                             {
-                                if($_SESSION["paises"][$x]->getIdPais() == $usu->Pais)
+                                if($_SESSION["paises"][$x]->getIdPais() == $usu->getPais())
                                 {
                                     ?><option value= "<?php echo $_SESSION["paises"][$x]->getIdPais();?>" selected="selected"><?php echo $_SESSION["paises"][$x]->getNomPais();?></option ><?php
                                 }

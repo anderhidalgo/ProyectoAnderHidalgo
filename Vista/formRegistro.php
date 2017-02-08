@@ -48,7 +48,7 @@ abstract class formRegistro
                     PaisBD::obtenerPaises();
                     //Repetitiva que nos saca los paises de la base de datos , la consulta esta en /Controlador/PaisBD
                     for($x=0;$x<count($_SESSION["paises"]);$x++) {
-                        ?><option name ="pais" value = "<?php echo $_SESSION["paises"][$x]->getIdPais();?>"><?php echo $_SESSION["paises"][$x]->getNomPais();?></option >
+                        ?><option name ="pais" value = "<?php echo $_SESSION["paises"][$x]->getIdPais();?>"><?php echo $_SESSION["paises"][$x]->getNomPais();?></option>
 
                         <?php
                     }
