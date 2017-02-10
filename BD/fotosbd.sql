@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-02-2017 a las 13:41:50
+-- Tiempo de generación: 10-02-2017 a las 14:00:55
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 
 --
 -- Estructura de tabla para la tabla `Album`
---V2
+--
 
 CREATE TABLE `Album` (
   `IdAlbum` int(11) NOT NULL,
@@ -32,8 +32,25 @@ CREATE TABLE `Album` (
   `Descripcion` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
   `Fecha` date DEFAULT NULL,
   `Pais` int(11) DEFAULT NULL,
-  `Usuario` int(11) NOT NULL
+  `Usuario` varchar(11) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `Album`
+--
+
+INSERT INTO `Album` (`IdAlbum`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Usuario`) VALUES
+(1, '', '', '0000-00-00', 0, '0'),
+(2, '', '', '0000-00-00', 0, '0'),
+(3, '', '', '0000-00-00', 0, '0'),
+(4, '', '', '0000-00-00', 0, '0'),
+(5, 'Bocadillos', 'fotosbocadillazos', '2017-02-08', 2, '0'),
+(6, 'ataria', 'fotosataria', '2017-02-04', 4, '0'),
+(7, 'txapelas', 'txapelas-respingonas', '2017-02-03', 2, '0'),
+(8, 'ander', 'ander-fotos', '2017-02-08', 17, 'ander'),
+(9, 'chiflas', 'chiflas-png', '2017-02-08', 3, 'ander'),
+(10, 'primavera', 'primaver-png', '2017-02-06', 2, 'ander'),
+(11, 'euskal', 'lan-png', '2017-02-03', 20, 'vicente');
 
 -- --------------------------------------------------------
 
@@ -111,10 +128,8 @@ CREATE TABLE `Usuario` (
 --
 
 INSERT INTO `Usuario` (`IdUsuario`, `NomUsuario`, `Contrasena`, `Email`, `FNacimiento`, `Ciudad`, `Pais`, `Foto`, `FRegistro`) VALUES
-(1, 'ander', '123', 'ander@gmail.com', '1994-08-30', 'Vitoria-Gasteiz', 1, 'foto', '2017-01-25 12:00:00'),
-(2, 'cejas', 'abc', 'cejas@gmail.com', '2018-01-01', 'Badoo', 0, 'chiflas', '0000-00-00 00:00:00'),
-(4, 'vicente', 'picao', 'picao@gmail.com', '2019-01-01', 'badoo', 1, 'chi', '0000-00-00 00:00:00'),
-(5, 'caifas', '123', 'caifas@gmail.com', '2020-04-01', 'Jerusalen', 1, 'judios', '2017-01-27 13:02:08');
+(10, 'ander', '123', 'peloduto@gmail.com', '2017-02-09', 'vitoria', 5, 'qs.png', '2017-02-10 12:52:24'),
+(11, 'vicente', 'txapelas', 'wowu@wowmail.wow', '2017-02-02', 'Txapelas', 6, 'japonerdy.png', '2017-02-10 08:48:43');
 
 --
 -- Índices para tablas volcadas
@@ -153,7 +168,7 @@ ALTER TABLE `Usuario`
 -- AUTO_INCREMENT de la tabla `Album`
 --
 ALTER TABLE `Album`
-  MODIFY `IdAlbum` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdAlbum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `Foto`
 --
@@ -168,7 +183,7 @@ ALTER TABLE `Pais`
 -- AUTO_INCREMENT de la tabla `Usuario`
 --
 ALTER TABLE `Usuario`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

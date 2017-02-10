@@ -8,7 +8,7 @@
  */
 class Album
 {
-
+    private $IdAlbum;
     private $Titulo;
     private $Descripcion;
     private $Fecha;
@@ -17,12 +17,14 @@ class Album
 
     /**
      * Album constructor.
+     * @param $IdAlbum
      * @param $Titulo
      * @param $Descripcion
      * @param $Fecha
      * @param $Pais
      * @param $Usuario
      */
+
     public function __construct($Titulo, $Descripcion, $Fecha, $Pais, $Usuario)
     {
         $this->Titulo = $Titulo;
@@ -30,6 +32,22 @@ class Album
         $this->Fecha = $Fecha;
         $this->Pais = $Pais;
         $this->Usuario = $Usuario;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdAlbum()
+    {
+        return $this->IdAlbum;
+    }
+
+    /**
+     * @param mixed $IdAlbum
+     */
+    public function setIdAlbum($IdAlbum)
+    {
+        $this->IdAlbum = $IdAlbum;
     }
 
     /**
@@ -111,7 +129,6 @@ class Album
     {
         $this->Usuario = $Usuario;
     }
-
 
 
 
