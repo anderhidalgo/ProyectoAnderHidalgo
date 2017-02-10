@@ -34,7 +34,7 @@ abstract class formBorrar
             <form action="router.php" method="post">
 
                 <input type="submit" name="borrar" value="Borrar">
-                <input type="submit" name="cancelar2" value="Cancelar">
+                <input type="submit" name="volver" value="Cancelar">
 
             </form>
             </body>

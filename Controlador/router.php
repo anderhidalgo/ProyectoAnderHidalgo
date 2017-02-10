@@ -12,7 +12,7 @@ require_once "../Vista/formDatos.php";
 require_once "../Vista/formBorrar.php";
 require_once "../Vista/formCrearAlbum.php";
 require_once "../Vista/formMiAlbum.php";
-
+require_once "../Vista/formAnadirFotoAlbum.php";
 
 require_once "LoginBD.php";
 require_once "RegistroBD.php";
@@ -64,6 +64,7 @@ elseif(isset($_POST["albumes"])){
         formMiAlbum::misAlbumes();
 
 }
+
 //Mostrar ventana crear album
 elseif (isset($_POST["nuevoalbum"])){
         formCrearAlbum::vAlbum();
@@ -76,6 +77,15 @@ elseif (isset($_POST["crearalbum"])){
     header('Location: ../Vista/formPrincipal.php');
 
 }
+
+elseif (isset($_POST["fotonueva"])){
+    formAnadirFotoAlbum::vanadirFoto();
+
+}
+elseif(isset($_POST["anadirfoto"])){
+
+}
+
 elseif (isset($_POST["sesioncerrar"])){
 
     $_SESSION["usuario"] = null;
@@ -87,6 +97,7 @@ elseif(isset($_POST["cancelar"])) {
     header('Location: ../index.php');
 
 }
+
 elseif(isset($_POST["volver"])) {
     header('Location: ../Vista/formPrincipal.php');
 
