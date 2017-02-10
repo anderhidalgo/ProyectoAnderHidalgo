@@ -20,10 +20,10 @@ public static function borrar(){
         $conexion=GenericoBD::conectar();
 
 
-        $usu =  $_SESSION["usuario"];
+        $usu =  unserialize($_SESSION["usuario"]);
 
 
-        $consulta = "DELETE FROM Usuario WHERE NomUsuario = '".$usu->NomUsuario."'";
+        $consulta = "DELETE FROM Usuario WHERE NomUsuario = '".$usu->getNomUsuario()."'";
 
 
         $rs = mysqli_query($conexion, $consulta);

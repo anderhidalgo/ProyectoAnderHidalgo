@@ -9,7 +9,9 @@ require_once "../Modelo/GenericoBD.php";
 require_once "../Vista/formLogin.php";
 require_once "../Modelo/Usuario.php";
 
-session_start();
+if (session_status() != 2) {
+    session_start();
+}
 
 //funciones para el logueo
 

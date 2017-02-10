@@ -19,7 +19,29 @@ class AlbumBD
 
         $conexion=GenericoBD::conectar();
 
+        $usu = unserialize($_SESSION["usuario"]);
 
+        $consulta = "SELECT * FROM Album WHERE Usuario = '".$usu->getNomusuario()."'";
+
+        $resultado = mysqli_query($conexion, $consulta);
+
+        $fila = mysqli_fetch_object($resultado);
+
+        //Crea array vacio
+        $albumes = [];
+
+        while($fila != null)
+
+        {
+            $album = new Album($fila->Titulo, $fila->Descripcion, $fila->Fecha, $fila->Pais, $fila->Usuario);
+
+            array_push($albumes, $album);
+            $fila = mysqli_fetch_object($resultado);
+
+        }
+
+
+        $_SESSION["albumes"] = $albumes;
 
 
         GenericoBD::desconectar($conexion);
@@ -31,7 +53,6 @@ class AlbumBD
     public static function insertarAlbum(){
 
         $conexion=GenericoBD::conectar();
-
         $titulo = $_POST["titulo"];
         $descripcion = $_POST["descripcion"];
         $fecha  = $_POST["fecha"];
@@ -50,17 +71,13 @@ class AlbumBD
     }
 
 
-
-
     public static function buscarAlbum(){
 
         $conexion=GenericoBD::conectar();
 
 
 
-
         GenericoBD::desconectar($conexion);
-
 
 
 

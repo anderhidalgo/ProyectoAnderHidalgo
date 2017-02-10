@@ -57,7 +57,7 @@ abstract class formDatos{
                     <p>Foto: <input type="text" name="foto" value="<?php echo $usu->getFoto();?>"></p>
 
                     <input type="submit" name="modificar" value="Modificar">
-                    <input type="submit" name="cancelar" value="cancelar">
+                    <input type="submit" name="volver" value="cancelar">
 
                 </form>
 

@@ -6,6 +6,8 @@
  * Date: 8/2/17
  * Time: 14:02
  */
+require_once "../Controlador/PaisBD.php";
+
 abstract class formCrearAlbum
 {
 
@@ -25,29 +27,24 @@ abstract class formCrearAlbum
         <h3>Rellena los datos del Album.</h3>
 
         <form action="router.php" method="post">
+
             <label for="titulo">Titulo: </label><input type="text" name="titulo">
             <label for="descripcion">Descripcion: </label> <input type="text" name="descripcion">
             <label for="fecha">Fecha: </label> <input type="date" name="fecha" min="1900-01-01" max="<?php echo date("Y-m-d");?>"></p>
             <label for="pais">Pais: </label><select name="pais">
                 <?php
-                funciones::sacarPaises();
-                for ($x = 0; $x < count($_SESSION["paises"]); $x++) {
-                    ?><option value= "<?php echo $_SESSION["paises"][$x]->getIdPais();?>"><?php echo $_SESSION["paises"][$x]->getNomPais();?></option ><?php
+                    PaisBD::obtenerPaises();
+                    for ($x = 0; $x < count($_SESSION["paises"]); $x++) {
+                        ?><option value= "<?php echo $_SESSION["paises"][$x]->getIdPais();?>"><?php echo $_SESSION["paises"][$x]->getNomPais();?></option ><?php
                 }
                 ?>
             </select>
 
-            <input type="submit" name="nuevoalbum" value="Crear">
-            <input type="submit" name="cancelar2" value="Cancelar">
+            <input type="submit" name="crearalbum" value="Crear">
+            <input type="submit" name="volver" value="Cancelar">
         </form>
         </body>
         </html>
-
-
-
-
-
-
 
 
     <?php

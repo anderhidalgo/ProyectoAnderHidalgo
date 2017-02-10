@@ -12,6 +12,15 @@ if (session_status() != 2) {
 }
 
 //Pagina principal de despues loguearnos correctamente
+
+//Cerrar sesion
+//session_destroy();
+
+if($_SESSION["usuario"] == null){
+    header('Location: ../index.php');
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +42,9 @@ if (session_status() != 2) {
     <input type="submit" name="albumes" value="Mis álbumes">
     <input type="submit" name="nuevoalbum" value="Crear álbum">
     <input type="submit" name="fotonueva" value="Añadir foto al álbum">
+    <br>
+    <br>
+    <input type="submit" name="sesioncerrar" value="Cerrar Sesión">
 
 </form>
 </body>
