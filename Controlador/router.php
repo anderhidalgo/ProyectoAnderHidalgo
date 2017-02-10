@@ -14,11 +14,11 @@ require_once "../Vista/formCrearAlbum.php";
 require_once "../Vista/formMiAlbum.php";
 require_once "../Vista/formAnadirFotoAlbum.php";
 
-require_once "LoginBD.php";
-require_once "RegistroBD.php";
-require_once "BorrarBD.php";
-require_once "ModificarBD.php";
-require_once "AlbumBD.php";
+require_once "../Modelo/LoginBD.php";
+require_once "../Modelo/RegistroBD.php";
+require_once "../Modelo/BorrarBD.php";
+require_once "../Modelo/ModificarBD.php";
+require_once "../Modelo/AlbumBD.php";
 
 //Router para movernos entre las opciones de la pagina
 

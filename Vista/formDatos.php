@@ -6,7 +6,7 @@
  * Time: 0:12
  */
 //Pagina con los datos del usuario
-require_once "../Controlador/PaisBD.php";
+require_once "../Modelo/PaisBD.php";
 
 //Formulario 
 abstract class formDatos{

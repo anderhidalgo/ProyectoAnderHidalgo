@@ -8,8 +8,8 @@
 
 //La funcion para sacar los paises de la base de datos
 
-require_once '../Modelo/Pais.php';
-require_once '../Modelo/GenericoBD.php';
+require_once 'Pais.php';
+require_once 'GenericoBD.php';
 
 class PaisBD{
 

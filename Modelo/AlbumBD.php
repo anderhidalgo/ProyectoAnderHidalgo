@@ -7,9 +7,9 @@
  * Time: 12:11
  */
 
-require_once '../Modelo/GenericoBD.php';
-require_once '../Modelo/Album.php';
-require_once '../Modelo/Usuario.php';
+require_once 'GenericoBD.php';
+require_once 'Album.php';
+require_once 'Usuario.php';
 
 
 class AlbumBD

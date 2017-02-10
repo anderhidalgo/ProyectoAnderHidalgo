@@ -6,8 +6,8 @@
  * Date: 2/2/17
  * Time: 12:18
  */
-require_once '../Modelo/GenericoBD.php';
-require_once '../Modelo/Usuario.php';
+require_once 'GenericoBD.php';
+require_once 'Usuario.php';
 
 
 

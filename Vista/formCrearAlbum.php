@@ -6,7 +6,7 @@
  * Date: 8/2/17
  * Time: 14:02
  */
-require_once "../Controlador/PaisBD.php";
+require_once "../Modelo/PaisBD.php";
 
 abstract class formCrearAlbum
 {

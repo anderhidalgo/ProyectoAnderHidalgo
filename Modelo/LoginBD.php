@@ -5,9 +5,9 @@
  * Date: 25/1/17
  * Time: 13:23
  */
-require_once "../Modelo/GenericoBD.php";
+require_once "GenericoBD.php";
 require_once "../Vista/formLogin.php";
-require_once "../Modelo/Usuario.php";
+require_once "Usuario.php";
 
 if (session_status() != 2) {
     session_start();

@@ -7,7 +7,7 @@
  */
 
 //Pagina con el formulario de registro de un nuevo usuario
-require_once "../Controlador/PaisBD.php";
+require_once "../Modelo/PaisBD.php";
 
 abstract class formRegistro
 {

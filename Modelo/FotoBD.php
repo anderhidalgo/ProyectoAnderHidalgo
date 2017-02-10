@@ -6,8 +6,8 @@
  * Date: 10/2/17
  * Time: 12:29
  */
-require_once '../Modelo/GenericoBD.php';
-require_once '../Modelo/Foto.php';
+require_once 'GenericoBD.php';
+require_once 'Foto.php';
 
 class FotoBD
 {
@@ -16,7 +16,7 @@ class FotoBD
 
             $conexion=GenericoBD::conectar();
 
-            
+
 
             $rs = mysqli_query($conexion, "INSERT INTO fotos (Titulo, Fecha, Pais, Album, Fichero) VALUES ( '" . $foto->getTitulo() . "', '" . $foto->getFecha() . "', '" . $foto->getPais() . "', '" . $foto->getAlbum() . "', '" . $foto->getFichero() . "')");
 

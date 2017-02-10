@@ -8,8 +8,8 @@
  */
 //funciones para realizar el registro de un nuevo usuario
 
-require_once '../Modelo/Usuario.php';
-require_once '../Modelo/GenericoBD.php';
+require_once 'Usuario.php';
+require_once 'GenericoBD.php';
 
 class RegistroBD
 
