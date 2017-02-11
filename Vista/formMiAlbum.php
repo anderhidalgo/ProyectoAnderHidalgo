@@ -23,7 +23,7 @@ public static function misAlbumes(){
 
     <h1>Listado de álbumes</h1>
 
-    <form action="router.php" method="post">
+
         <?php
         AlbumBD::buscarAlbumes();
 
@@ -33,20 +33,22 @@ public static function misAlbumes(){
         }
         else
             {
-            echo '<h3>Selecciona el Álbum que quiere ver.</h3>';
-            echo "<table border='1'><tr><th>Album</th><th>Fecha</th><th>Descripcion</th><th>Ver álbum</th></tr>";
-            for ($x = 0; $x < count($_SESSION["albumes"]); $x++) {
-                ?><tr><td><?php echo $_SESSION["albumes"][$x]->getTitulo();?></td><td><?php echo $_SESSION["albumes"][$x]->getFecha();?></td><td><?php echo $_SESSION["albumes"][$x]->getDescripcion();?></td><td> <a href="#">Enlace vacio</a></td></tr><?php
-            }
-            echo "</table>";
+                echo '<h3>Selecciona el Álbum que quieres ver.</h3>';
+                echo "<form action='router.php' method='post'><table class='table' border='1'><tr><th>Album</th><th>Fecha</th><th>Descripcion</th><th>Ver album</th></tr>";
+                for ($x = 0; $x < count($_SESSION["albumes"]); $x++) {
+                    ?><tr><td><?php echo $_SESSION["albumes"][$x]->getTitulo();?></td><td><?php echo $_SESSION["albumes"][$x]->getFecha();?></td><td><?php echo $_SESSION["albumes"][$x]->getDescripcion();?></td><td><input type="submit" name="veralbum" value="Ver Album"><input type="hidden" name="album" value="<?php echo $_SESSION["albumes"][$x]->getIdalbum();?>" </td></tr><?php
+                }
+                echo "</table></form>";
         }
 
         ?>
         </table>
         <br/>
-        <input type="submit" name="volver" value="Volver">
+        <form action="router.php" method="post">
+            <input type="submit" name="volver" value="Volver">
+        </form>
 
-    </form>
+
     </body>
     </html>
 

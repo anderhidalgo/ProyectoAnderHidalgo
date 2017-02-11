@@ -26,14 +26,14 @@ class Foto
      * @param $FRegistro
      */
 
-    public function __construct($Titulo, $Fecha, $Pais, $Album, $Fichero, $FRegistro)
+    public function __construct($Titulo, $Fecha, $Pais, $Album, $Fichero)
     {
         $this->Titulo = $Titulo;
         $this->Fecha = $Fecha;
         $this->Pais = $Pais;
         $this->Album = $Album;
         $this->Fichero = $Fichero;
-        $this->FRegistro = $FRegistro;
+
     }
 
     /**

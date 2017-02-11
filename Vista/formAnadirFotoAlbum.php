@@ -42,14 +42,25 @@ public static function vanadirFoto(){
         <?php
 
         AlbumBD::buscarAlbumes();
-        for ($x = 0; $x < count($_SESSION["albumes"]); $x++) {
-            ?><option value= "<?php echo $_SESSION["albumes"][$x]->getTitulo();?>"><?php echo $_SESSION["albumes"][$x]->getTitulo();?></option ><?php
+        if($_SESSION["albumes"] == null){
+            echo "No hay albumes de este usuario";
+        }
+        else
+        {
+            for ($x = 0; $x < count($_SESSION["albumes"]); $x++) {
+
+                ?>
+                <option value="<?php echo $_SESSION["albumes"][$x]->getIdalbum();?>"><?php echo $_SESSION["albumes"][$x]->getTitulo();?></option>
+                <?php
+
+            }
+
         }
 
         ?>
         </select>
 
-        <p><label for="fichero">Fichero:</label><input type="file" name="fichero" accept="image/*"></p>
+        <p><label for="foto">Foto: </label><input type="file" name="foto" accept="image/*"></p>
         <label for=""></label>
 
         <input type="submit" name="anadirfoto" value="Anadir Foto">

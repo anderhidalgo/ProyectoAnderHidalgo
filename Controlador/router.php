@@ -13,12 +13,14 @@ require_once "../Vista/formBorrar.php";
 require_once "../Vista/formCrearAlbum.php";
 require_once "../Vista/formMiAlbum.php";
 require_once "../Vista/formAnadirFotoAlbum.php";
+require_once "../Vista/formVistaAlbum.php";
 
 require_once "../Modelo/LoginBD.php";
 require_once "../Modelo/RegistroBD.php";
 require_once "../Modelo/BorrarBD.php";
 require_once "../Modelo/ModificarBD.php";
 require_once "../Modelo/AlbumBD.php";
+require_once "../Modelo/FotoBD.php";
 
 //Router para movernos entre las opciones de la pagina
 
@@ -83,6 +85,15 @@ elseif (isset($_POST["fotonueva"])){
 
 }
 elseif(isset($_POST["anadirfoto"])){
+    FotoBD::insertarFoto();
+    header('Location: ../Vista/formPrincipal.php');
+}
+elseif (isset($_POST["veralbum"])){
+    if(AlbumBD::buscarAlbum()){
+        formVistaAlbum::vistaAlbum();
+    }else{
+        header('Location: ../Vista/formPrincipal.php');
+    }
 
 }
 
