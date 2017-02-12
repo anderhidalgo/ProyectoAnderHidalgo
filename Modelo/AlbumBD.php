@@ -23,28 +23,26 @@ class AlbumBD
 
         $consulta = "SELECT * FROM Album WHERE IdAlbum ='".$id."'";
 
-        $resultado = mysqli_query($conexion, $consulta);
+        $rs = mysqli_query($conexion, $consulta);
 
-        if ($resultado->num_rows !=0)
+        if ($rs->num_rows !=0)
         {
-            $fila = mysqli_fetch_object($resultado);
-
-            // Creo el objeto album, para pasarloselo a session
+            $fila = mysqli_fetch_object($rs);
 
             $album = new Album($fila->Titulo, $fila->Descripcion, $fila->Fecha, $fila->Pais, $fila->Usuario);
-            $album->setIdalbum($fila->IdAlbum);
-            //session_start();
+
+            $album->setIdAlbum($fila->IdAlbum);
 
             $_SESSION["album"] = serialize($album);
             GenericoBD::desconectar($conexion);
             return true;
 
-        }else{
-            GenericoBD::desconectar($conexion);
-            return false;
         }
 
-
+        else
+        {
+            return false;
+        }
 
 
     }
@@ -75,9 +73,9 @@ class AlbumBD
 
         $conexion=GenericoBD::conectar();
 
-        $user = unserialize($_SESSION["usuario"]);
+        $usu = unserialize($_SESSION["usuario"]);
 
-        $consulta = "SELECT * FROM Album WHERE Usuario = '".$user->getNomusuario()."'";
+        $consulta = "SELECT * FROM Album WHERE Usuario = '".$usu->getNomusuario()."'";
 
         $resultado = mysqli_query($conexion, $consulta);
 
@@ -88,14 +86,13 @@ class AlbumBD
         while($fila != null)
         {
             $album = new Album($fila->Titulo, $fila->Descripcion, $fila->Fecha, $fila->Pais, $fila->Usuario);
-            $album->setIdalbum($fila->IdAlbum);
+            $album->setIdAlbum($fila->IdAlbum);
             array_push($albumes, $album);
             $fila = mysqli_fetch_object($resultado);
         }
         $_SESSION["albumes"] = $albumes;
 
         GenericoBD::desconectar($conexion);
-
 
 
     }

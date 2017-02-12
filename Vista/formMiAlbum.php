@@ -36,7 +36,8 @@ public static function misAlbumes(){
                 echo '<h3>Selecciona el Álbum que quieres ver.</h3>';
                 echo "<form action='router.php' method='post'><table class='table' border='1'><tr><th>Album</th><th>Fecha</th><th>Descripcion</th><th>Ver album</th></tr>";
                 for ($x = 0; $x < count($_SESSION["albumes"]); $x++) {
-                    ?><tr><td><?php echo $_SESSION["albumes"][$x]->getTitulo();?></td><td><?php echo $_SESSION["albumes"][$x]->getFecha();?></td><td><?php echo $_SESSION["albumes"][$x]->getDescripcion();?></td><td><input type="submit" name="veralbum" value="Ver Album"><input type="hidden" name="album" value="<?php echo $_SESSION["albumes"][$x]->getIdalbum();?>" </td></tr><?php
+
+                    ?><tr><td><?php echo $_SESSION["albumes"][$x]->getTitulo();?></td><td><?php echo $_SESSION["albumes"][$x]->getFecha();?></td><td><?php echo $_SESSION["albumes"][$x]->getDescripcion();?></td><td><input type="submit" name="veralbum" value="Ver Album"><input type="hidden" name="album" value="<?php echo $_SESSION["albumes"][$x]->getIdAlbum();?>" </td></tr><?php
                 }
                 echo "</table></form>";
         }

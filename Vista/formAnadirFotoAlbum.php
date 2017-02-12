@@ -50,7 +50,7 @@ public static function vanadirFoto(){
             for ($x = 0; $x < count($_SESSION["albumes"]); $x++) {
 
                 ?>
-                <option value="<?php echo $_SESSION["albumes"][$x]->getIdalbum();?>"><?php echo $_SESSION["albumes"][$x]->getTitulo();?></option>
+                <option value="<?php echo $_SESSION["albumes"][$x]->getIdAlbum();?>"><?php echo $_SESSION["albumes"][$x]->getTitulo();?></option>
                 <?php
 
             }

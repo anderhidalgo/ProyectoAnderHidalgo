@@ -8,6 +8,7 @@
  */
 require_once 'GenericoBD.php';
 require_once 'Foto.php';
+//require_once 'Album.php';
 
 class FotoBD
 {
@@ -44,7 +45,7 @@ class FotoBD
 
             $album = unserialize($_SESSION["album"]);
 
-            $consulta = "SELECT * FROM Foto WHERE Album = '".$album->getIdalbum()."'";
+            $consulta = "SELECT * FROM Foto WHERE Album = '".$album->getIdAlbum()."'";
 
             $resultado = mysqli_query($conexion, $consulta);
 
