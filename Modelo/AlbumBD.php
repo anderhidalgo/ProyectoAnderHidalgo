@@ -16,7 +16,7 @@ class AlbumBD
 {
 
     public static function buscarAlbum() {
-
+        //funcion que nos busca el album por su id
         $conexion=GenericoBD::conectar();
 
         $id = $_POST["album"];
@@ -49,7 +49,7 @@ class AlbumBD
 
 
     public static function insertarAlbum(){
-
+        //funcion que nos inserta un album
         $conexion=GenericoBD::conectar();
         $titulo = $_POST["titulo"];
         $descripcion = $_POST["descripcion"];
@@ -70,7 +70,7 @@ class AlbumBD
 
 
     public static function buscarAlbumes(){
-
+        //funcion que nos busca los albumes por usuario
         $conexion=GenericoBD::conectar();
 
         $usu = unserialize($_SESSION["usuario"]);

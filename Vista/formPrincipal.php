@@ -7,6 +7,7 @@
  */
 
 require_once ('../Modelo/Usuario.php');
+//Comprobar si hemos creado la session
 if (session_status() != 2) {
     session_start();
 }

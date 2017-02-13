@@ -6,6 +6,8 @@
  * Time: 13:12
  */
 
+//Pagina de confirmacion para borrar el usuario
+
 require_once '../Modelo/Usuario.php';
 
 abstract class formBorrar

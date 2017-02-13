@@ -13,7 +13,7 @@ class ModificarBD
 {
 
     public static function modificar(){
-
+        //funcion que nos modifica el usuario
         $contrasena = $_POST["contrasena"];
         $email = $_POST["email"];
         $fecha  = $_POST["fecha"];
@@ -33,6 +33,7 @@ class ModificarBD
         $usuario->setFoto($foto);
 
         $conexion=GenericoBD::conectar();
+        //Podemos cambiar cualquier parametro del usuario menos su nombre
         $consulta="UPDATE Usuario 
                     SET Contrasena ='".$usuario->getContrasena()."', Email ='".$usuario->getEmail()."', FNacimiento ='".$usuario->getFNacimiento()."', Ciudad ='".$usuario->getCiudad()."', Pais ='".$usuario->getPais()."', Foto ='".$usuario->getFoto()."'
                     WHERE NomUsuario ='".$usuario->getNomUsuario()."'";

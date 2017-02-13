@@ -21,10 +21,11 @@ class FotoBD
             $fecha = $_POST["fecha"];
             $pais = $_POST["pais"];
             $album  = $_POST["album"];
-
+            //Metemos la foto en $_FILES y le decimos a la ruta donde tiene que ir en el proyecto
             $archivoFoto  = $_FILES['foto']['tmp_name'];
             $destinoFoto = "../Fotos/".$_FILES['foto']['name'];
 
+            //movemos la imagen a nuestro proyecto
             move_uploaded_file($archivoFoto, $destinoFoto);
 
             $foto = new Foto($titulo, $fecha ,$pais ,$album, $destinoFoto);
@@ -41,7 +42,7 @@ class FotoBD
 
         public static function sFotos(){
 
-
+            //funcion que nos saca las fotos por el id de album
             $conexion=GenericoBD::conectar();
 
             $album = unserialize($_SESSION["album"]);
@@ -96,7 +97,7 @@ class FotoBD
         public static function ultimasFotos()
 
         {
-
+            //funcion que nos saca las ultimas 5 fotos añadidas a la base de datoas
             $conexion=GenericoBD::conectar();
 
 

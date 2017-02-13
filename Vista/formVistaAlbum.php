@@ -6,6 +6,7 @@
  * Date: 10/2/17
  * Time: 13:32
  */
+//Ventana que dentro de cada album saca su vista y las fotos
 abstract class formVistaAlbum
 {
 
@@ -32,7 +33,7 @@ abstract class formVistaAlbum
         <p>Pais: <?php echo $album->getPais();?></p>
 
         <?php FotoBD::sFotos();
-
+        //repetitiva que recorre el $_SESSION de fotos y nos saca las fotos
         for ($x = 0; $x < count($_SESSION["fotos"]); $x++)
         {
             ?><img src="<?php echo $_SESSION["fotos"][$x]->getFichero();?>"><?php

@@ -6,6 +6,7 @@
  * Date: 12/02/17
  * Time: 16:41
  */
+//Ventana que nos muestra la foto
 abstract class formBusquedaFoto
 {
 

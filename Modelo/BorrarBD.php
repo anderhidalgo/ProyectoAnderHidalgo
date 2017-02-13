@@ -17,6 +17,7 @@ class BorrarBD
 public static function borrar(){
 
     try{
+        //funcion que nos borra el usuario actual conectado
         $conexion=GenericoBD::conectar();
 
 

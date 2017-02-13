@@ -38,6 +38,7 @@ abstract class formDatos{
                     <p>Pais: <select name="pais">
                             <?php
                             PaisBD::obtenerPaises();
+                            //repetitiva que nos saca los paises de la base de datos
 
                             for ($x = 0; $x < count($_SESSION["paises"]); $x++)
                             {

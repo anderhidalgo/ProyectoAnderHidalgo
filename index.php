@@ -6,7 +6,7 @@
  * Time: 13:56
  */
 session_start();
-
+//los require necesarios
 require_once "Modelo/FotoBD.php";
 require_once "Vista/formLogin.php";
 

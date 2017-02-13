@@ -6,6 +6,7 @@
  * Date: 10/2/17
  * Time: 10:00
  */
+//Pagina para añadir una foto al album
 abstract class formAnadirFotoAlbum
 {
 
@@ -32,6 +33,7 @@ public static function vanadirFoto(){
         <label for="pais">Pais: </label><select name="pais">
             <?php
             PaisBD::obtenerPaises();
+            //repetitiva que saca los paises de la base de datos
             for ($x = 0; $x < count($_SESSION["paises"]); $x++) {
                 ?><option value= "<?php echo $_SESSION["paises"][$x]->getIdPais();?>"><?php echo $_SESSION["paises"][$x]->getNomPais();?></option ><?php
             }
@@ -42,6 +44,7 @@ public static function vanadirFoto(){
         <?php
 
         AlbumBD::buscarAlbumes();
+        //repetitiva que nos saca los albumes del usuario y no hay un mensaje de no se ha encontrado
         if($_SESSION["albumes"] == null){
             echo "No hay albumes de este usuario";
         }

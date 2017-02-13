@@ -6,6 +6,7 @@
  * Date: 8/2/17
  * Time: 14:02
  */
+//Pagina donde esta la opcion de crear album
 require_once "../Modelo/PaisBD.php";
 
 abstract class formCrearAlbum
@@ -34,6 +35,7 @@ abstract class formCrearAlbum
             <label for="pais">Pais: </label><select name="pais">
                 <?php
                     PaisBD::obtenerPaises();
+                    //repetitiva para sacar los paises de la base de datos
                     for ($x = 0; $x < count($_SESSION["paises"]); $x++) {
                         ?><option value= "<?php echo $_SESSION["paises"][$x]->getIdPais();?>"><?php echo $_SESSION["paises"][$x]->getNomPais();?></option ><?php
                 }

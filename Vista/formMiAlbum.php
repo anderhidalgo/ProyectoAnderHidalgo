@@ -6,6 +6,7 @@
  * Date: 10/2/17
  * Time: 8:47
  */
+//ventana que nos muestra nuestros albums
 abstract class formMiAlbum
 {
 
@@ -26,6 +27,7 @@ public static function misAlbumes(){
 
         <?php
         AlbumBD::buscarAlbumes();
+        //si no tiene albumes nos saca el mensaje y si no nos saca los albums con la repetitiva de abajo que la ejecuta por cada uno de los botones
 
         if($_SESSION["albumes"] == null)
         {

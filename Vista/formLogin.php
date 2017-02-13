@@ -54,6 +54,7 @@ abstract class formLogin
             <?php
 
             FotoBD::ultimasFotos();
+            //repetitiva que nos saca las ultimas fotos (llamamos a la funcion arriba en fotobd)
 
             for($x = 0; $x < count($_SESSION["ultimas"]); $x++)
             {
