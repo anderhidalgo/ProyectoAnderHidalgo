@@ -38,7 +38,7 @@ class FotoBD
         }
 
 
-        public static function buscarFotos(){
+        public static function sFotos(){
 
 
             $conexion=GenericoBD::conectar();
@@ -65,6 +65,32 @@ class FotoBD
 
 
         }
+
+        public static function bFotos(){
+
+            $conexion=GenericoBD::conectar();
+
+            $nomfoto = $_POST["nomfoto"];
+
+            $consulta = "SELECT * FROM Foto WHERE Titulo LIKE '%" . $nomfoto . "%'";
+            $rs = mysqli_query($conexion, $consulta);
+            $fila = mysqli_fetch_object($rs);
+            $busqueda = [];
+
+            while ($fila != null)
+            {
+                $foto = new Foto($fila->Titulo, $fila->Fecha, $fila->Pais, $fila->Album, $fila->Fichero);
+                array_push($busqueda, $foto);
+                $fila = mysqli_fetch_object($rs);
+            }
+            $_SESSION["busqueda"] = $busqueda;
+
+
+            GenericoBD::desconectar($conexion);
+
+        }
+
+
 
         public static function ultimasFotos()
 

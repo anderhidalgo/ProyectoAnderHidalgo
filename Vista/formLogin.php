@@ -9,6 +9,8 @@
 
 //Pagina inicial donde introduciremos los datos del usuario, si no esta el usuario no da la opcion de registrarnos
 
+//require_once "../Modelo/FotoBD.php";
+
 abstract class formLogin
 {
 
@@ -22,7 +24,7 @@ abstract class formLogin
             <meta charset="UTF-8">
             <title>Login del usuario</title>
         </head>
-        <body>
+
 
         <h1>Iniciar sesion</h1>
 
@@ -37,7 +39,30 @@ abstract class formLogin
             <input type="submit" name="entrar" value="entrar">
             <input type="submit" name="registrarse" value="registrarse">
 
+
+
+            <div class="busqueda">
+                <p>Busqueda de fotos:</p>
+                <p><input type="text" name="nomfoto" value="Fotos a buscar"></p> <input type="submit" name="buscarfoto" value="Buscar">
+
+            </div>
         </form>
+
+        <div class="fotos">
+            <h4>Ultimas fotos subidas</h4>
+            <?php
+
+            FotoBD::ultimasFotos();
+            for($x = 0; $x < count($_SESSION["ultimas"]); $x++)
+            {
+                ?><img height="200px" src="<?php echo $_SESSION["ultimas"][$x]->getFichero();?>"><?php
+            }
+
+            ?>
+
+        </div>
+
+
         <br>
         <p> <?php echo $error; ?></p>
         </body>
@@ -48,7 +73,5 @@ abstract class formLogin
     }
 
 }
-
-
 
 ?>

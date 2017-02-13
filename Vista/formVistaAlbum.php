@@ -31,7 +31,7 @@ abstract class formVistaAlbum
         <p>Fecha: <?php echo $album->getFecha();?></p>
         <p>Pais: <?php echo $album->getPais();?></p>
 
-        <?php FotoBD::buscarFotos();
+        <?php FotoBD::sFotos();
 
         for ($x = 0; $x < count($_SESSION["fotos"]); $x++)
         {

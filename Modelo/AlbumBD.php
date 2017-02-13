@@ -57,7 +57,7 @@ class AlbumBD
         $pais  = $_POST["pais"];
         $usu = unserialize($_SESSION["usuario"]);
 
-        $nombre  = $usu->getNomusuario();
+        $nombre  = $usu->getNomUsuario();
 
         $album = new Album($titulo, $descripcion ,$fecha ,$pais ,$nombre);
 
@@ -75,7 +75,7 @@ class AlbumBD
 
         $usu = unserialize($_SESSION["usuario"]);
 
-        $consulta = "SELECT * FROM Album WHERE Usuario = '".$usu->getNomusuario()."'";
+        $consulta = "SELECT * FROM Album WHERE Usuario = '".$usu->getNomUsuario()."'";
 
         $resultado = mysqli_query($conexion, $consulta);
 

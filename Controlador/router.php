@@ -14,6 +14,7 @@ require_once "../Vista/formCrearAlbum.php";
 require_once "../Vista/formMiAlbum.php";
 require_once "../Vista/formAnadirFotoAlbum.php";
 require_once "../Vista/formVistaAlbum.php";
+require_once "../Vista/formBusquedaFoto.php";
 
 require_once "../Modelo/LoginBD.php";
 require_once "../Modelo/RegistroBD.php";
@@ -95,6 +96,10 @@ elseif (isset($_POST["veralbum"])){
         header('Location: ../Vista/formPrincipal.php');
     }
 
+}
+
+elseif (isset($_POST["buscarfoto"])){
+    formBusquedaFoto::vBFoto();
 }
 
 elseif (isset($_POST["sesioncerrar"])){
