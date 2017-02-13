@@ -17,7 +17,6 @@ class Album
 
     /**
      * Album constructor.
-     * @param $IdAlbum
      * @param $Titulo
      * @param $Descripcion
      * @param $Fecha

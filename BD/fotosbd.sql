@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-02-2017 a las 11:48:35
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 5.6.24
+-- Tiempo de generación: 13-02-2017 a las 20:40:20
+-- Versión del servidor: 10.1.19-MariaDB
+-- Versión de PHP: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -77,7 +77,8 @@ INSERT INTO `Foto` (`IdFoto`, `Titulo`, `Fecha`, `Pais`, `Album`, `Fichero`, `FR
 (1, 'vodka', '2017-02-08', 17, 12, '../Fotos/business-1.jpg', '0000-00-00 00:00:00'),
 (2, 'jeje', '2017-02-09', 5, 8, '../Fotos/business-1.jpg', '2017-02-13 10:20:10'),
 (3, 'g', '2017-02-10', 5, 10, '../Fotos/Captura de pantalla 2017-02-13 ', '2017-02-13 10:58:22'),
-(4, 'q', '2017-02-08', 5, 9, '../Fotos/Captura de pantalla 2017-02-13 ', '2017-02-13 11:01:25');
+(4, 'q', '2017-02-08', 5, 9, '../Fotos/Captura de pantalla 2017-02-13 ', '2017-02-13 11:01:25'),
+(5, 'disco', '2017-02-04', 2, 9, '../Fotos/technics-q-c-640-480-2.jpg', '2017-02-13 19:49:28');
 
 -- --------------------------------------------------------
 
@@ -184,7 +185,7 @@ ALTER TABLE `Album`
 -- AUTO_INCREMENT de la tabla `Foto`
 --
 ALTER TABLE `Foto`
-  MODIFY `IdFoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IdFoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `Pais`
 --
