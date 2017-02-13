@@ -24,6 +24,7 @@ class FotoBD
 
             $archivoFoto  = $_FILES['foto']['tmp_name'];
             $destinoFoto = "../Fotos/".$_FILES['foto']['name'];
+
             move_uploaded_file($archivoFoto, $destinoFoto);
 
             $foto = new Foto($titulo, $fecha ,$pais ,$album, $destinoFoto);

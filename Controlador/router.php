@@ -90,12 +90,14 @@ elseif(isset($_POST["anadirfoto"])){
     header('Location: ../Vista/formPrincipal.php');
 }
 elseif (isset($_POST["veralbum"])){
-    if(AlbumBD::buscarAlbum()){
-        formVistaAlbum::vistaAlbum();
-    }else{
-        header('Location: ../Vista/formPrincipal.php');
-    }
 
+        if(AlbumBD::buscarAlbum()){
+
+            formVistaAlbum::vistaAlbum();
+        }else{
+
+            header('Location: ../Vista/formPrincipal.php');
+        }
 }
 
 elseif (isset($_POST["buscarfoto"])){

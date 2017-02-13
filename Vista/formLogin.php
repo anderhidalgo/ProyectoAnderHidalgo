@@ -49,13 +49,15 @@ abstract class formLogin
         </form>
 
         <div class="fotos">
+
             <h4>Ultimas fotos subidas</h4>
             <?php
 
             FotoBD::ultimasFotos();
+
             for($x = 0; $x < count($_SESSION["ultimas"]); $x++)
             {
-                ?><img height="200px" src="<?php echo $_SESSION["ultimas"][$x]->getFichero();?>"><?php
+                ?><img height="300px" src="<?php echo substr($_SESSION["ultimas"][$x]->getFichero(), 3);?>"><?php
             }
 
             ?>

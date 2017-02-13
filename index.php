@@ -7,6 +7,7 @@
  */
 session_start();
 
+require_once "Modelo/FotoBD.php";
 require_once "Vista/formLogin.php";
 
 
