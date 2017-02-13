@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-02-2017 a las 14:00:55
+-- Tiempo de generación: 13-02-2017 a las 11:48:35
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -50,7 +50,8 @@ INSERT INTO `Album` (`IdAlbum`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Usuar
 (8, 'ander', 'ander-fotos', '2017-02-08', 17, 'ander'),
 (9, 'chiflas', 'chiflas-png', '2017-02-08', 3, 'ander'),
 (10, 'primavera', 'primaver-png', '2017-02-06', 2, 'ander'),
-(11, 'euskal', 'lan-png', '2017-02-03', 20, 'vicente');
+(11, 'euskal', 'lan-png', '2017-02-03', 20, 'vicente'),
+(12, 'invierno', 'fotosinvierno', '2017-02-07', 17, 'ander');
 
 -- --------------------------------------------------------
 
@@ -65,8 +66,18 @@ CREATE TABLE `Foto` (
   `Pais` int(11) DEFAULT NULL,
   `Album` int(11) NOT NULL,
   `Fichero` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
-  `FRegistro` datetime NOT NULL
+  `FRegistro` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `Foto`
+--
+
+INSERT INTO `Foto` (`IdFoto`, `Titulo`, `Fecha`, `Pais`, `Album`, `Fichero`, `FRegistro`) VALUES
+(1, 'vodka', '2017-02-08', 17, 12, '../Fotos/business-1.jpg', '0000-00-00 00:00:00'),
+(2, 'jeje', '2017-02-09', 5, 8, '../Fotos/business-1.jpg', '2017-02-13 10:20:10'),
+(3, 'g', '2017-02-10', 5, 10, '../Fotos/Captura de pantalla 2017-02-13 ', '2017-02-13 10:58:22'),
+(4, 'q', '2017-02-08', 5, 9, '../Fotos/Captura de pantalla 2017-02-13 ', '2017-02-13 11:01:25');
 
 -- --------------------------------------------------------
 
@@ -168,12 +179,12 @@ ALTER TABLE `Usuario`
 -- AUTO_INCREMENT de la tabla `Album`
 --
 ALTER TABLE `Album`
-  MODIFY `IdAlbum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `IdAlbum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `Foto`
 --
 ALTER TABLE `Foto`
-  MODIFY `IdFoto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdFoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `Pais`
 --
@@ -183,7 +194,7 @@ ALTER TABLE `Pais`
 -- AUTO_INCREMENT de la tabla `Usuario`
 --
 ALTER TABLE `Usuario`
-  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `IdUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
