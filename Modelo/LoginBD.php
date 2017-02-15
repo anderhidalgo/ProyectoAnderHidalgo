@@ -52,7 +52,7 @@ class LoginBD
         {
             //Me lleva a index si falla lo he cambiado por un mensaje de error
             //header('Location: ../index.php');
-            formLogin::fInicio("ERROR el usuario no existe, registrate para poder acceder a la pagina");
+            formLogin::fInicio("ERROR el usuario no existe, registrate para poder acceder a la pagina", true);
         }
 
 

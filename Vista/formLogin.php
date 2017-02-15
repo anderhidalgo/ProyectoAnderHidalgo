@@ -14,7 +14,7 @@
 abstract class formLogin
 {
 
-    public static function fInicio($error='')
+    public static function fInicio($error='', $fotosi=false)
 
     {
         ?>
@@ -58,7 +58,13 @@ abstract class formLogin
 
             for($x = 0; $x < count($_SESSION["ultimas"]); $x++)
             {
-                ?><img height="300px" src="<?php echo substr($_SESSION["ultimas"][$x]->getFichero(), 3);?>"><?php
+                if(!$fotosi){
+                    ?><img height="300px" src="<?php echo substr($_SESSION["ultimas"][$x]->getFichero(), 3);?>"><?php
+                }
+                else{
+                    ?><img height="300px" src="<?php echo $_SESSION["ultimas"][$x]->getFichero();?>"><?php
+                }
+
             }
 
             ?>
